@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gcpdemo
-        image: gcr.io/$PROJECT_ID/gcpdemo
+        image: gcr.io/gcp-demo-385203/gcpdemo:latest
         ports:
         - containerPort: 5000
         env:
