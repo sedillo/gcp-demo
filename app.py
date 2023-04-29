@@ -1,4 +1,4 @@
-from flask import flask
+from flask import Flask as flask
 app = flask(__name__)
 
 # Create main function that prints hello world
