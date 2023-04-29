@@ -1,1 +1,1 @@
-# gcp-demo
+# Repo for fgor new GPC learning
