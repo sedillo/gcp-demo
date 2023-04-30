@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gcpdemo
+      app: gcpdemo-preprod
   template:
     metadata:
       labels:
-        app: gcpdemo
+        app: gcpdemo-preprod
     spec:
       containers:
-      - name: gcpdemo
-        image: gcr.io/gcp-demo-385203/gcpdemo:latest
+      - name: gcpdemo-preprod
+        image: gcr.io/gcp-demo-385203/gcpdemo-preprod:latest
         ports:
         - containerPort: 5000
         env:
@@ -24,14 +24,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gcpdemo-serivce
-  namespace: gcp-devops-prod
+  name: gcpdemo-serivce-prod
+  namespace: gcp-devops-preprod
   labels:
     app.kubernetes.io/managed-by: "gcp-cloud-build-deploy"
 spec:
   type: LoadBalancer
   selector:
-    app: gcpdemo
+    app: gcpdemo-prod
   ports:
     - protocol: TCP
       port: 80
